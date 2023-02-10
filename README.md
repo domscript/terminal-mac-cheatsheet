@@ -2,6 +2,26 @@
 
 ---
 
+**[SHORTCUTS](#shortcuts)**
+**[CORE COMMANDS](#core-commands)**
+**[CHAINING COMMANDS](#chaining-commands)**
+**[PIPING COMMANDS](#piping-commands)**
+**[COMMAND HISTORY](#command-history)**
+**[FILE MANAGEMENT](#file-management)**
+**[DIRECTORY MANAGEMENT](#directory-management)**
+**[FILE SIZE AND DISK SPACE](#file-size-and-disk-space)**
+**[SEARCH](#search)**
+**[HOMEBREW](#homebrew)**
+**[HELP](#help)**
+**[LIST DIRECTORY CONTENTS](#list-directory-contents)**
+**[PERMISSIONS](#permissions)**
+**[PROCESSES](#processes)**
+**[NETWORK](#network)**
+**[ENVIRONMENT VARIABLE OR PATH](#environment-variable-or-path)**
+**[OUTPUT](#output)**
+
+---
+
 ## SHORTCUTS
 
 | Key/Command     | Description                                                                                                                                       |
@@ -146,7 +166,7 @@
 | grep -r [search_pattern] [dir]       | Recursively search in all files in specified directory for all lines that contain the pattern             |
 | grep -v [search_pattern] [file]      | Search for all lines that do NOT contain the pattern                                                      |
 | grep -i [search_pattern] [file]      | Search for all lines that contain the case-insensitive pattern                                            |
-| grep -rl ["text"] [dir]              | Search for all files containing <text> inside <dir>                                                       |
+| grep -rl ["text"] [dir]              | Search for all files containing [text] inside [dir]                                                       |
 | mdfind [search_pattern]              | Spotlight search for files (names, content, other metadata), e.g. `mdfind skateboard`                     |
 | mdfind -onlyin [dir] -name [pattern] | Spotlight search for files named like pattern in the given directory                                      |
 
@@ -217,7 +237,7 @@
 | top                      | Display live information about currently running processes                                                                                |
 | top -ocpu -s 5           | Display processes sorted by CPU usage, updating every 5 seconds                                                                           |
 | top -o rsize             | Sort top by memory usage                                                                                                                  |
-| kill PID                 | Quit process with ID <PID>. You'll see PID as a column in the Activity Monitor                                                            |
+| kill PID                 | Quit process with ID [PID]. You'll see PID as a column in the Activity Monitor                                                            |
 | ps -ax \| grep [appname] | Find a process by name or PID                                                                                                             |
 
 |
@@ -229,8 +249,8 @@
 | ping [host]                           | Ping host and display status                                                                                 |
 | whois [domain]                        | Output whois info for a domain                                                                               |
 | curl -O [url/to/file]                 | Download file via HTTP, HTTPS, or FTP                                                                        |
-| ssh [username]@[host]                 | Establish SSH connection to <host> with user <username>                                                      |
-| scp [file] [user]@[host]:/remote/path | Copy <file> to a remote <host>                                                                               |
+| ssh [username]@[host]                 | Establish SSH connection to [host] with user [username]                                                      |
+| scp [file] [user]@[host]:/remote/path | Copy [file] to a remote [host]                                                                               |
 | arp -a                                | View a list of all devices on your local network. It will show you the IP and MAC address of all the devices |
 | ifconfig en0                          | View your device IP and MAC address                                                                          |
 | traceroute [hostname]                 | Identify the path and the hops traversed by the packets from your device to the destination address          |
@@ -249,9 +269,9 @@
 
 | Command          | Action                                                                                 |
 | ---------------- | -------------------------------------------------------------------------------------- |
-| cat [file]       | Output the content of <file>                                                           |
-| less [file]      | Output the contents of <file> using the less command that supports pagination and more |
-| head [file]      | Output the first 10 lines of <file>                                                    |
-| [cmd] > > [file] | Appends the output of <cmd> to <file>                                                  |
-| [cmd] > [file]   | Direct the output of <cmd> into <file>                                                 |
-| [cmd1] \| [cmd2] | Direct the output of <cmd1> to <cmd2>                                                  |
+| cat [file]       | Output the content of [file]                                                           |
+| less [file]      | Output the contents of [file] using the less command that supports pagination and more |
+| head [file]      | Output the first 10 lines of [file]                                                    |
+| [cmd] > > [file] | Appends the output of [cmd] to [file]                                                  |
+| [cmd] > [file]   | Direct the output of [cmd] into [file]                                                 |
+| [cmd1] \| [cmd2] | Direct the output of [cmd1] to [cmd2]                                                  |
