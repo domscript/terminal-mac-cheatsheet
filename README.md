@@ -126,7 +126,7 @@
 | [command] >> [file]     | Append output to existing file                            |
 | [command] < [file]      | Tell command to read content from a file                  |
 
-## File size and disk space
+## FILE SIZE AND DISK SPACE
 
 | Command              | Action                                                                                                             |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -139,17 +139,18 @@
 
 ## SEARCH
 
-| Key/Command                          | Description                                                                                   |
-| ------------------------------------ | --------------------------------------------------------------------------------------------- |
-| find [dir] -name [search_pattern]    | Search for files, e.g. `find /Users -name "file.txt"`                                         |
-| grep [search_pattern] [file]         | Search for all lines that contain the pattern, e.g. `grep "Tom" file.txt`                     |
-| grep -r [search_pattern] [dir]       | Recursively search in all files in specified directory for all lines that contain the pattern |
-| grep -v [search_pattern] [file]      | Search for all lines that do NOT contain the pattern                                          |
-| grep -i [search_pattern] [file]      | Search for all lines that contain the case-insensitive pattern                                |
-| mdfind [search_pattern]              | Spotlight search for files (names, content, other metadata), e.g. `mdfind skateboard`         |
-| mdfind -onlyin [dir] -name [pattern] | Spotlight search for files named like pattern in the given directory                          |
+| Key/Command                          | Description                                                                                               |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| find [dir] -name [search_pattern]    | Search for files, e.g. `find /Users -name "file.txt"` Use wildcards (\*) to search for parts of filenames |
+| grep [search_pattern] [file]         | Search for all lines that contain the pattern, e.g. `grep "Tom" file.txt`                                 |
+| grep -r [search_pattern] [dir]       | Recursively search in all files in specified directory for all lines that contain the pattern             |
+| grep -v [search_pattern] [file]      | Search for all lines that do NOT contain the pattern                                                      |
+| grep -i [search_pattern] [file]      | Search for all lines that contain the case-insensitive pattern                                            |
+| grep -rl ["text"] [dir]              | Search for all files containing <text> inside <dir>                                                       |
+| mdfind [search_pattern]              | Spotlight search for files (names, content, other metadata), e.g. `mdfind skateboard`                     |
+| mdfind -onlyin [dir] -name [pattern] | Spotlight search for files named like pattern in the given directory                                      |
 
-## Homebrew
+## HOMEBREW
 
 | Command                          | Action                                                                   |
 | -------------------------------- | ------------------------------------------------------------------------ |
@@ -179,3 +180,78 @@
 | man [command]            | Show the help manual for [command]                |
 | whatis [command]         | Gives a one-line description of [command]         |
 | apropos [search-pattern] | Searches for command with keywords in description |
+
+## LIST DIRECTORY CONTENTS
+
+| Command | Action                                                                                                                            |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| ls      | Display the name of files and subdirectories in the directory                                                                     |
+| ls -C   | Force multi-column output of the listing                                                                                          |
+| ls -a   | List all entries including those with . and ..                                                                                    |
+| ls -1   | Output the list of files in one entry per line format                                                                             |
+| ls -F   | Display a / immediately after each path that is a directory, \* after executable programs or scripts, and @ after a symbolic link |
+| ls -S   | Sort files or entries by size                                                                                                     |
+| ls -l   | List in a long format. Includes file mode, owner and group name, date and time file was modified, pathname, and more              |
+| ls -l / | List of the file system from root with symbolic links                                                                             |
+| ls -lt  | List the files sorted by time modified (most recent first)                                                                        |
+| ls -lh  | Long listing with human readable file sizes in KB, MB, or GB                                                                      |
+| ls -lo  | List the file names with size, owner, and flags                                                                                   |
+| ls -la  | List detailed directory contents, including hidden files                                                                          |
+
+## PERMISSIONS
+
+| Command                     | Action                                                                              |
+| --------------------------- | ----------------------------------------------------------------------------------- |
+| ls -ld                      | Display the default permission for a home directory                                 |
+| ls -ld \/[dir]              | Display the read, write, and access permission of a particular folder               |
+| chmod 755 [file]            | Change the permission of a file to 755                                              |
+| chmod -R 600 [dir]          | Change the permission of a folder (and its contents) to 600                         |
+| chown [user]:[group] [file] | Change the ownership of a file to user and group. Add -R to include folder contents |
+
+## PROCESSES
+
+| Command                  | Action                                                                                                                                    |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| ps -ax                   | Output currently running processes. Here, a shows processes from all users and x shows processes that are not connected with the Terminal |
+| ps -aux                  | Shows all the processes with %cpu, %mem, page in, PID, and command                                                                        |
+| top                      | Display live information about currently running processes                                                                                |
+| top -ocpu -s 5           | Display processes sorted by CPU usage, updating every 5 seconds                                                                           |
+| top -o rsize             | Sort top by memory usage                                                                                                                  |
+| kill PID                 | Quit process with ID <PID>. You'll see PID as a column in the Activity Monitor                                                            |
+| ps -ax \| grep [appname] | Find a process by name or PID                                                                                                             |
+
+|
+
+## NETWORK
+
+| Command                               | Action                                                                                                       |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| ping [host]                           | Ping host and display status                                                                                 |
+| whois [domain]                        | Output whois info for a domain                                                                               |
+| curl -O [url/to/file]                 | Download file via HTTP, HTTPS, or FTP                                                                        |
+| ssh [username]@[host]                 | Establish SSH connection to <host> with user <username>                                                      |
+| scp [file] [user]@[host]:/remote/path | Copy <file> to a remote <host>                                                                               |
+| arp -a                                | View a list of all devices on your local network. It will show you the IP and MAC address of all the devices |
+| ifconfig en0                          | View your device IP and MAC address                                                                          |
+| traceroute [hostname]                 | Identify the path and the hops traversed by the packets from your device to the destination address          |
+
+## ENVIRONMENT VARIABLE OR PATH
+
+| Command                                     | Action                                                                                         |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| printenv                                    | Display a list of currently set environment variables. Also tells you which shell you're using |
+| $echo                                       | Tells the terminal to print something and show it to you                                       |
+| echo $PATH                                  | Check the value of the PATH variable which storea a list of directories with executable files  |
+| echo $PATH >path.txt                        | Export the path directory to a text file                                                       |
+| export PATH=$PATH:absolute/path to/program/ | Execute a program via terminal only in your current session                                    |
+
+## OUTPUT
+
+| Command          | Action                                                                                 |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| cat [file]       | Output the content of <file>                                                           |
+| less [file]      | Output the contents of <file> using the less command that supports pagination and more |
+| head [file]      | Output the first 10 lines of <file>                                                    |
+| [cmd] > > [file] | Appends the output of <cmd> to <file>                                                  |
+| [cmd] > [file]   | Direct the output of <cmd> into <file>                                                 |
+| [cmd1] \| [cmd2] | Direct the output of <cmd1> to <cmd2>                                                  |
