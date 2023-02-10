@@ -126,6 +126,16 @@
 | [command] >> [file]     | Append output to existing file                            |
 | [command] < [file]      | Tell command to read content from a file                  |
 
+## File size and disk space
+
+| Command         | Action                                            |
+| --------------- | ------------------------------------------------- |
+| du              | List usage for each subdirectory and its contents |
+| du -sh [folder] | Human readable output of all files in a directory |
+| du -s           | Display an entry for each specified file          |
+| df -h           | Calculate your system's free disk space           |
+| df -H           | Calculate free disk space in powers of 1,000      |
+
 ## SEARCH
 
 | Key/Command                          | Description                                                                                   |
@@ -137,6 +147,20 @@
 | grep -i [search_pattern] [file]      | Search for all lines that contain the case-insensitive pattern                                |
 | mdfind [search_pattern]              | Spotlight search for files (names, content, other metadata), e.g. `mdfind skateboard`         |
 | mdfind -onlyin [dir] -name [pattern] | Spotlight search for files named like pattern in the given directory                          |
+
+## Homebrew
+
+| Command                        | Action                                                                   |
+| ------------------------------ | ------------------------------------------------------------------------ |
+| brew doctor                    | Check brew for potential problems                                        |
+| brew help                      | List of useful homebrew formula and cask commands                        |
+| brew list --formula            | List only installed formulas                                             |
+| brew list --cask               | List only installed cask                                                 |
+| brew outdated --formula        | Search for outdated formula                                              |
+| brew outdated --cask           | Search for outdated cask                                                 |
+| brew pin [installed_formula]   | Pin a formula from getting upgraded                                      |
+| brew unpin [installed_formula] | Unpin to upgrade a package                                               |
+| brew cleanup                   | Remove stale lock files and outdated packages for all formula and casks. |
 
 ## HELP
 
