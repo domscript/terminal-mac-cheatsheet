@@ -80,36 +80,36 @@
 
 ## FILE MANAGEMENT
 
-| Key/Command                              | Description                                                                                                  |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| touch [file]                             | Create a new file                                                                                            |
-| pwd                                      | Full path to working directory                                                                               |
-| .                                        | Current folder, e.g. `ls .`                                                                                  |
-| ..                                       | Parent/enclosing directory, e.g. `ls ..`                                                                     |
-| ls -l ..                                 | Long listing of parent directory                                                                             |
-| cd ../../                                | Move 2 levels up                                                                                             |
-| cat                                      | Concatenate to screen                                                                                        |
-| rm [file]                                | Remove a file, e.g. `rm data.tmp` (This deletes the file permanently; use with caution.)                     |
-|                                          |
-| rm -i [file]                             | Remove a file only when you give confirmation                                                                |
-| rm -r [dir]                              | Remove a directory and contents                                                                              |
-| rm -f [file]                             | Force removal without confirmation                                                                           |
-| rm [file1] [file2] [file3]               | Delete multiple files without any confirmation                                                               |
-|                                          |
-| cp [file] [newfile]                      | Copy file and give it custom name in the current directory                                                   |
-| cp [file] [dir]                          | Copy file to directory                                                                                       |
-| cp [file]~/[dir]/[newfile]               | Copy a file to the directory and rename the copied file                                                      |
-| cp -R [dir] ["newdir"]                   | Copy a directory to a new directory with spaces in the filename                                              |
-| cp -i [file] [dir]                       | Prompts you before copying a file with a warning overwrite message                                           |
-| cp [file1] [file2] [file3]/[dir1]/[dir2] | Copy multiple files to a directory                                                                           |
-| ditto -V [dirpath]/[newdir]              | Copy the contents of a directory to new directory. In here "-V" print a line of status for every file copied |
-| mv [file] [newfilename]                  | Move/Rename, e.g. `mv file1.ad /tmp`                                                                         |
-| mv [file] [dir]                          | Move a file to the directory, possibly by overwriting an existing file                                       |
-| mv -i [file] [dir]                       | Optional -i flag to warn you before overwriting the file                                                     |
-| mv \*.png ~/[dir]                        | Move all PNG files from current directory to a different directory                                           |
-| pbcopy < [file]                          | Copies file contents to clipboard                                                                            |
-| pbpaste                                  | Paste clipboard contents                                                                                     |
-| pbpaste > [file]                         | Paste clipboard contents into file, `pbpaste > paste-test.txt`                                               |
+| Key/Command                                | Description                                                                                                  |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| touch [file]                               | Create a new file                                                                                            |
+| pwd                                        | Full path to working directory                                                                               |
+| .                                          | Current folder, e.g. `ls .`                                                                                  |
+| ..                                         | Parent/enclosing directory, e.g. `ls ..`                                                                     |
+| ls -l ..                                   | Long listing of parent directory                                                                             |
+| cd ../../                                  | Move 2 levels up                                                                                             |
+| cat                                        | Concatenate to screen                                                                                        |
+| rm [file]                                  | Remove a file, e.g. `rm data.tmp` (This deletes the file permanently; use with caution.)                     |
+|                                            |
+| rm -i [file]                               | Remove a file only when you give confirmation                                                                |
+| rm -r [dir]                                | Remove a directory and contents                                                                              |
+| rm -f [file]                               | Force removal without confirmation                                                                           |
+| rm [file1] [file2] [file3]                 | Delete multiple files without any confirmation                                                               |
+|                                            |
+| cp [file] [newfile]                        | Copy file and give it custom name in the current directory                                                   |
+| cp [file] [dir]                            | Copy file to directory                                                                                       |
+| cp [file]~/[dir]/[newfile]                 | Copy a file to the directory and rename the copied file                                                      |
+| cp -R [dir] ["newdir"]                     | Copy a directory to a new directory with spaces in the filename                                              |
+| cp -i [file] [dir]                         | Prompts you before copying a file with a warning overwrite message                                           |
+| cp [file1] [file2] [file3] \/[dir1]/[dir2] | Copy multiple files to a directory                                                                           |
+| ditto -V [dirpath]/[newdir]                | Copy the contents of a directory to new directory. In here "-V" print a line of status for every file copied |
+| mv [file] [newfilename]                    | Move/Rename, e.g. `mv file1.ad /tmp`                                                                         |
+| mv [file] [dir]                            | Move a file to the directory, possibly by overwriting an existing file                                       |
+| mv -i [file] [dir]                         | Optional -i flag to warn you before overwriting the file                                                     |
+| mv \*.png ~/[dir]                          | Move all PNG files from current directory to a different directory                                           |
+| pbcopy < [file]                            | Copies file contents to clipboard                                                                            |
+| pbpaste                                    | Paste clipboard contents                                                                                     |
+| pbpaste > [file]                           | Paste clipboard contents into file, `pbpaste > paste-test.txt`                                               |
 
 ## DIRECTORY MANAGEMENT
 
@@ -128,13 +128,14 @@
 
 ## File size and disk space
 
-| Command         | Action                                            |
-| --------------- | ------------------------------------------------- |
-| du              | List usage for each subdirectory and its contents |
-| du -sh [folder] | Human readable output of all files in a directory |
-| du -s           | Display an entry for each specified file          |
-| df -h           | Calculate your system's free disk space           |
-| df -H           | Calculate free disk space in powers of 1,000      |
+| Command              | Action                                                                                                             |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| du                   | List usage for each subdirectory and its contents                                                                  |
+| du -sh [folder]      | Human readable output of all files in a directory                                                                  |
+| du -s                | Display an entry for each specified file                                                                           |
+| df -h                | Calculate your system's free disk space                                                                            |
+| df -H                | Calculate free disk space in powers of 1,000                                                                       |
+| du -sk\* \| sort -nr | List files and folders, totaling the size including the subfolders. Replace sk* with sm* to list directories in MB |
 
 ## SEARCH
 
@@ -150,17 +151,23 @@
 
 ## Homebrew
 
-| Command                        | Action                                                                   |
-| ------------------------------ | ------------------------------------------------------------------------ |
-| brew doctor                    | Check brew for potential problems                                        |
-| brew help                      | List of useful homebrew formula and cask commands                        |
-| brew list --formula            | List only installed formulas                                             |
-| brew list --cask               | List only installed cask                                                 |
-| brew outdated --formula        | Search for outdated formula                                              |
-| brew outdated --cask           | Search for outdated cask                                                 |
-| brew pin [installed_formula]   | Pin a formula from getting upgraded                                      |
-| brew unpin [installed_formula] | Unpin to upgrade a package                                               |
-| brew cleanup                   | Remove stale lock files and outdated packages for all formula and casks. |
+| Command                          | Action                                                                   |
+| -------------------------------- | ------------------------------------------------------------------------ |
+| brew doctor                      | Check brew for potential problems                                        |
+| brew help                        | List of useful homebrew formula and cask commands                        |
+| brew list --formula              | List only installed formulas                                             |
+| brew list --cask                 | List only installed cask                                                 |
+| brew outdated --formula          | Search for outdated formula                                              |
+| brew outdated --cask             | Search for outdated cask                                                 |
+| brew outdated [formula]\|[cask]  | Search for outdated formula or cask                                      |
+| brew pin [installed_formula]     | Pin a formula from getting upgraded                                      |
+| brew unpin [installed_formula]   | Unpin to upgrade a package                                               |
+| brew install [formula]\|[cask]   | Install a formula or cask                                                |
+| brew uninstall [formula]\|[cask] | Uninstall a formula or cask                                              |
+| brew deps [formula]\|[cask]      | List all the dependencies of a formula or cask                           |
+| brew search text \|/regex/       | Search formula or cask through regex                                     |
+| brew upgrade [formula]\|[cask]   | Upgrade the formula or cask                                              |
+| brew cleanup                     | Remove stale lock files and outdated packages for all formula and casks. |
 
 ## HELP
 
