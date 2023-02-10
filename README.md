@@ -3,21 +3,37 @@
 ---
 
 **[SHORTCUTS](#shortcuts)**
+
 **[CORE COMMANDS](#core-commands)**
+
 **[CHAINING COMMANDS](#chaining-commands)**
+
 **[PIPING COMMANDS](#piping-commands)**
+
 **[COMMAND HISTORY](#command-history)**
+
 **[FILE MANAGEMENT](#file-management)**
+
 **[DIRECTORY MANAGEMENT](#directory-management)**
+
 **[FILE SIZE AND DISK SPACE](#file-size-and-disk-space)**
+
 **[SEARCH](#search)**
+
 **[HOMEBREW](#homebrew)**
+
 **[HELP](#help)**
+
 **[LIST DIRECTORY CONTENTS](#list-directory-contents)**
+
 **[PERMISSIONS](#permissions)**
+
 **[PROCESSES](#processes)**
+
 **[NETWORK](#network)**
+
 **[ENVIRONMENT VARIABLE OR PATH](#environment-variable-or-path)**
+
 **[OUTPUT](#output)**
 
 ---
