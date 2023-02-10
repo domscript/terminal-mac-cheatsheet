@@ -37,6 +37,8 @@
 | cd ~           | Home directory                                                            |
 | cd /           | Root of drive                                                             |
 | cd -           | Previous directory                                                        |
+| cd ..          | Move up to the parent directory                                           |
+| cd../..        | Move up two levels                                                        |
 | ls             | Short listing                                                             |
 | ls -l          | Long listing                                                              |
 | ls -a          | Listing incl. hidden files                                                |
@@ -78,38 +80,51 @@
 
 ## FILE MANAGEMENT
 
-| Key/Command              | Description                                                    |
-| ------------------------ | -------------------------------------------------------------- |
-| touch [file]             | Create a new file                                              |
-| pwd                      | Full path to working directory                                 |
-| .                        | Current folder, e.g. `ls .`                                    |
-| ..                       | Parent/enclosing directory, e.g. `ls ..`                       |
-| ls -l ..                 | Long listing of parent directory                               |
-| cd ../../                | Move 2 levels up                                               |
-| cat                      | Concatenate to screen                                          |
-| rm [file]                | Remove a file, e.g. `rm data.tmp`                              |
-| rm -i [file]             | Remove with confirmation                                       |
-| rm -r [dir]              | Remove a directory and contents                                |
-| rm -f [file]             | Force removal without confirmation                             |
-| cp [file] [newfile]      | Copy file to file                                              |
-| cp [file] [dir]          | Copy file to directory                                         |
-| mv [file] [new filename] | Move/Rename, e.g. `mv file1.ad /tmp`                           |
-| pbcopy < [file]          | Copies file contents to clipboard                              |
-| pbpaste                  | Paste clipboard contents                                       |
-| pbpaste > [file]         | Paste clipboard contents into file, `pbpaste > paste-test.txt` |
+| Key/Command                              | Description                                                                                                  |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| touch [file]                             | Create a new file                                                                                            |
+| pwd                                      | Full path to working directory                                                                               |
+| .                                        | Current folder, e.g. `ls .`                                                                                  |
+| ..                                       | Parent/enclosing directory, e.g. `ls ..`                                                                     |
+| ls -l ..                                 | Long listing of parent directory                                                                             |
+| cd ../../                                | Move 2 levels up                                                                                             |
+| cat                                      | Concatenate to screen                                                                                        |
+| rm [file]                                | Remove a file, e.g. `rm data.tmp` (This deletes the file permanently; use with caution.)                     |
+|                                          |
+| rm -i [file]                             | Remove a file only when you give confirmation                                                                |
+| rm -r [dir]                              | Remove a directory and contents                                                                              |
+| rm -f [file]                             | Force removal without confirmation                                                                           |
+| rm [file1] [file2] [file3]               | Delete multiple files without any confirmation                                                               |
+|                                          |
+| cp [file] [newfile]                      | Copy file and give it custom name in the current directory                                                   |
+| cp [file] [dir]                          | Copy file to directory                                                                                       |
+| cp [file]~/[dir]/[newfile]               | Copy a file to the directory and rename the copied file                                                      |
+| cp -R [dir] ["newdir"]                   | Copy a directory to a new directory with spaces in the filename                                              |
+| cp -i [file] [dir]                       | Prompts you before copying a file with a warning overwrite message                                           |
+| cp [file1] [file2] [file3]/[dir1]/[dir2] | Copy multiple files to a directory                                                                           |
+| ditto -V [dirpath]/[newdir]              | Copy the contents of a directory to new directory. In here "-V" print a line of status for every file copied |
+| mv [file] [newfilename]                  | Move/Rename, e.g. `mv file1.ad /tmp`                                                                         |
+| mv [file] [dir]                          | Move a file to the directory, possibly by overwriting an existing file                                       |
+| mv -i [file] [dir]                       | Optional -i flag to warn you before overwriting the file                                                     |
+| mv \*.png ~/[dir]                        | Move all PNG files from current directory to a different directory                                           |
+| pbcopy < [file]                          | Copies file contents to clipboard                                                                            |
+| pbpaste                                  | Paste clipboard contents                                                                                     |
+| pbpaste > [file]                         | Paste clipboard contents into file, `pbpaste > paste-test.txt`                                               |
 
 ## DIRECTORY MANAGEMENT
 
-| Key/Command          | Description                                               |
-| -------------------- | --------------------------------------------------------- |
-| mkdir [dir]          | Create new directory                                      |
-| mkdir -p [dir]/[dir] | Create nested directories                                 |
-| rmdir [dir]          | Remove directory ( only operates on empty directories )   |
-| rm -R [dir]          | Remove directory and contents                             |
-| less [file]          | Output file content delivered in screensize chunks        |
-| [command] > [file]   | Push output to file, keep in mind it will get overwritten |
-| [command] >> [file]  | Append output to existing file                            |
-| [command] < [file]   | Tell command to read content from a file                  |
+| Key/Command             | Description                                               |
+| ----------------------- | --------------------------------------------------------- |
+| mkdir [dir]             | Create new directory                                      |
+| mkdir -p [dir]/[dir]    | Create nested directories                                 |
+| mkdir [dir] [dir] [dir] | Create several directories at once                        |
+| mkdir ["dir"]           | Create a directory with a space in the filename           |
+| rmdir [dir]             | Remove directory ( only operates on empty directories )   |
+| rm -R [dir]             | Remove directory and contents                             |
+| less [file]             | Output file content delivered in screensize chunks        |
+| [command] > [file]      | Push output to file, keep in mind it will get overwritten |
+| [command] >> [file]     | Append output to existing file                            |
+| [command] < [file]      | Tell command to read content from a file                  |
 
 ## SEARCH
 
